@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page panier du site Orinoco</title>
+    <title>Page détails produits Orinoco</title>
     <link rel="stylesheet" href="style.css">
 
     <!--Bootstrap css-->
@@ -18,11 +18,10 @@
                 <a class="navbar-brand" href="index.html">
                     <img class="image__logo" src="images/logo2.png" alt="logo Orinoco">
                 </a>
-                <button 
-                class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
-                 </button>
-                 <div id="navbarContent" class="collapse navbar-collapse">
+                </button>
+                <div id="navbarContent" class="collapse navbar-collapse">
                     <ul class="navbar-nav">
                         <li class="navbar-item active">
                             <a class="nav-link" href="index.html">Accueil</a>
@@ -34,32 +33,37 @@
                             </a>
                         </li>
                     </ul>
-                 </div>
+                </div>
             </nav>
         </div>
     </header>
     <!--Partie contenu-->
     <main class="container-fluid">
         <section class="row">
-            <h1 class="col-10">Liste des produits sélectionnés</h1>
-            <p class="col-10">prix total</p>
+            <h1 class="col-12">Détail du produit</h1>
         </section>
         <section class="row">
-            <form class="col">
-                <div class="form-group">
-                    <label for="nom">Nom:</label>
-                    <input type="text" class="form-control">
-                    <label for="prénom">Prénom:</label>
-                    <input type="text" class="form-control">
-                    <label for="Email">Email:</label>
-                    <input type="email" class="form-control">
-                    <label for="adresse">Adresse de livraison:</label>
-                    <input type="text" class="form-control">
-                    <input type="submit" value="Passer la commande">
+            <article class="col-8">
+                <div class="card">
+                    <img class="card-img" src="images/teddy_1.jpg" alt="Peluche 1">
+                    <div class="card-body text-center">
+                        <h2 class="card-title">Nom du produit</h2>
+                        <p class="card-text">prix</p>
+                    </div>
                 </div>
-            </form>
+            </article>
         </section>
-    </main>
+        <section class="row">
+            <h2 class="col-12">Personnalisé le produit</h2>
+            <select>
+                <option>Option 1</option>
+                <option>Option 2</option>
+                <option>Option 3</option>
+                <option>Option 4</option>
+            </select>
+            <button>Ajouter au panier</button>
+        </section>
+    </main>  
     <!--Partie footer-->
     <footer class="container-fluid">
         <section class="row">
