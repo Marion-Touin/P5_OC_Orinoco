@@ -8,10 +8,10 @@ header, footer{
     margin-right: 50rem;
     margin-left: 5rem;
 }
-h1{
+.title{
     text-align: center;
-    padding: 3% 0;
     color: #FFF;
+    margin-top: 3%;
 }
 footer{
     height: 100px;
@@ -19,8 +19,63 @@ footer{
 }
 main{
     background: linear-gradient(to right, #D07F47, #B56F97, #955CF2);
+    padding-bottom: 3%;
 }
 a{
     text-decoration: none;
 }
-
+.btn{
+    color: #FFF;
+    font-size: 1.5em;
+}
+.card{
+    margin-bottom: 10%;
+}
+.title-padding{
+    padding: 3% 0;
+}
+.select{
+    font-size: 25px;
+    margin: 3% 10% 6% 30%;
+    background-color: #FFF;
+    border-radius: 15px;
+    border: 1px solid #FFF;
+}
+.btn-ajouter{
+    font-size: 30px;
+    background-color: #FFF;
+    border-radius: 15px;
+    border: 1px solid #FFF;
+    margin: 3% 0 6% 0;
+}
+.prix-total{
+    font-size: 30px;
+    margin-left: 10%;
+}
+.label{
+    color: #FFF;
+    font-size: 25px;
+}
+.bordure{
+    border: 1px solid #FFF;
+    border-radius: 25px;
+    background-color: #FFF;
+    margin-top: 3%;
+    padding-bottom: 3%;
+}
+.para-confirmation{
+    font-size: 25px;
+}
+.identifiant{
+    font-size: 20px;
+}
+.btn-accueil{
+    border: 1px solid #955CF2;
+    border-radius: 25px;
+    color: #FFF;
+    background-color: #955CF2;
+    font-size: 30px;
+}
+.marge{
+    padding-bottom: 15%;
+}

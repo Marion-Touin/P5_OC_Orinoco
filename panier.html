@@ -2,19 +2,20 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Page panier du site Orinoco</title>
-    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a430ebc583.js" crossorigin="anonymous"></script>
 
     <!--Bootstrap css-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!--Partie header-->
     <header class="container-fluid">
         <div class="row">
-            <nav class="col navbar navbar-expand-lg navbar-dark">
+            <nav class="col-sm-4 col-md-4 col-lg-10 navbar navbar-expand-lg navbar-dark">
                 <a class="navbar-brand" href="index.html">
                     <img class="image__logo" src="images/logo2.png" alt="logo Orinoco">
                 </a>
@@ -25,10 +26,10 @@
                  <div id="navbarContent" class="collapse navbar-collapse">
                     <ul class="navbar-nav">
                         <li class="navbar-item active">
-                            <a class="nav-link" href="index.html">Accueil</a>
+                            <a class="nav-link btn" href="index.html">Accueil</a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link" href="panier.html">
+                            <a class="nav-link btn" href="panier.html">
                                 <i class="fas fa-shopping-basket"></i>
                                 Panier
                             </a>
@@ -40,33 +41,36 @@
     </header>
     <!--Partie contenu-->
     <main class="container-fluid">
-        <section class="row">
-            <h1 class="col-10">Liste des produits sélectionnés</h1>
-            <p class="col-10">prix total</p>
-        </section>
-        <section class="row">
-            <form class="col">
-                <div class="form-group">
-                    <label for="nom">Nom:</label>
-                    <input type="text" class="form-control">
-                    <label for="prénom">Prénom:</label>
-                    <input type="text" class="form-control">
-                    <label for="Email">Email:</label>
-                    <input type="email" class="form-control">
-                    <label for="adresse">Adresse de livraison:</label>
-                    <input type="text" class="form-control">
-                    <input type="submit" value="Passer la commande">
-                </div>
-            </form>
-        </section>
+        <div class="container">
+            <section class="row">
+                <h1 class="col-12 title">Liste des produits sélectionnés</h1>
+                <p class="col-12 prix-total">prix total de la commande:</p>
+            </section>
+            <section class="row">
+                <h2 class="col-12 title">Formulaire de commande</h2>
+                <form class="col">
+                    <div class="form-group">
+                        <label class="label" for="nom">Nom:</label>
+                        <input type="text" class="form-control">
+                        <label class="label" for="prénom">Prénom:</label>
+                        <input type="text" class="form-control">
+                        <label class="label" for="Email">Email:</label>
+                        <input type="email" class="form-control">
+                        <label class="label" for="adresse">Adresse de livraison:</label>
+                        <input type="text" class="form-control">
+                        <input class="btn-ajouter" type="submit" value="Passer la commande">
+                    </div>
+                </form>
+            </section>
+        </div>
     </main>
     <!--Partie footer-->
     <footer class="container-fluid">
         <section class="row">
-            <div class="col-12">
+            <div class="col-sm-10 col-md-10 col-lg-12">
                 <footer>
-                    <a class="link" href="#">Contact</a>
-                    <a href="mentions-légales">Mentions légales</a>
+                    <a class="btn" href="#">Contact</a>
+                    <a class="btn" href="mentions-légales">Mentions légales</a>
                 </footer>
             </div>
         </section> 

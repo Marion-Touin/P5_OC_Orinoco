@@ -2,19 +2,19 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page d'accueil du site Orinoco</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Page de confirmation du site Orinoco</title>
     <script src="https://kit.fontawesome.com/a430ebc583.js" crossorigin="anonymous"></script>
     <!--Bootstrap css-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!--Partie header-->
     <header class="container-fluid">
         <div class="row">
-            <nav class="col navbar navbar-expand-lg navbar-dark">
+            <nav class="col-sm-4 col-md-4 col-lg-10 navbar navbar-expand-lg navbar-dark">
                 <a class="navbar-brand" href="index.html">
                     <img class="image__logo" src="images/logo2.png" alt="logo Orinoco">
                 </a>
@@ -25,10 +25,10 @@
                  <div id="navbarContent" class="collapse navbar-collapse">
                     <ul class="navbar-nav">
                         <li class="navbar-item active">
-                            <a class="nav-link" href="index.html">Accueil</a>
+                            <a class="nav-link btn" href="index.html">Accueil</a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link" href="panier.html">
+                            <a class="nav-link btn" href="panier.html">
                                 <i class="fas fa-shopping-basket"></i>
                                 Panier
                             </a>
@@ -39,28 +39,30 @@
         </div>
     </header>
     <!--Partie contenu-->
-    <main class="container-fluid">
-        <section class="row">
-            <h1 class="col">Votre commande à bien été enregistrée</h1>
-        </section>
-        <section class="row">
-            <h2 class="col-10">Nous vous remerçions pour votre commande.</h2>
-            <p class="col-10">Elle vous sera expédié dans les meilleurs délais</p>
-            <p class="col-10">Identifiant de commande</p>
-            <p class="col-10">prix total de votre commande:</p>
-        <div class="row">
-            <a class="col-10" href="index.html">
-            <button> Retour à l'accueil</button>
-            </a>
+    <main class="container-fluid marge">
+        <div class="container">
+            <section class="row">
+                <h1 class="col-12 title">Votre commande à bien été enregistrée</h1>
+            </section>
+            <section class="row bordure">
+                <h2 class="col-12 text-center">Nous vous remerçions pour votre commande.</h2>
+                <p class="col-12 text-center para-confirmation">Elle vous sera expédié dans les meilleurs délais</p>
+                <p class="col-12 identifiant">Identifiant de commande:</p>
+                <p class="col-12 identifiant">prix total de votre commande:</p>
+            <div class="row">
+                <a class="col-12" href="index.html">
+                <button class="btn-accueil"> Retour à l'accueil</button>
+                </a>
+            </div>
         </div>
     </main>
     <!--Partie footer-->
     <footer class="container-fluid">
         <section class="row">
-            <div class="col-12">
+            <div class="col-sm-10 col-md-10 col-lg-12">
                 <footer>
-                    <a class="link" href="#">Contact</a>
-                    <a href="mentions-légales">Mentions légales</a>
+                    <a class="btn" href="#">Contact</a>
+                    <a class="btn" href="mentions-légales">Mentions légales</a>
                 </footer>
             </div>
         </section> 
