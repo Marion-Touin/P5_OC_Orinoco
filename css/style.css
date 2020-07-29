@@ -1,0 +1,43 @@
+.header {
+  background-color: #8D8383;
+}
+
+.footer {
+  background-color: #8D8383;
+}
+
+.main {
+  background: linear-gradient(to right, #D07F47, #B56F97, #955CF2);
+}
+
+.card-img {
+  height: 350px;
+}
+
+.btn {
+  background-color: #955CF2;
+  color: #FFF;
+}
+
+.personnaliser {
+  background-color: #FFF;
+  border-radius: 25px;
+}
+
+.prix {
+  font-size: 35px;
+}
+
+.label {
+  font-size: 25px;
+}
+
+.confirmation {
+  font-size: 25px;
+}
+
+.padding {
+  padding-bottom: 18%;
+}
+
+/*# sourceMappingURL=style.css.map */

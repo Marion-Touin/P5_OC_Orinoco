@@ -1,0 +1,10 @@
+.main{
+    @include main
+}
+.card-img{
+    height: 350px;
+}
+.btn{
+    background-color: $color-button;
+    color: $color-textbutton;
+}

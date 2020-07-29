@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="Site e-commerce d'Orinoco">
+    <title>Page panier du site Orinoco</title>
+    <script src="https://kit.fontawesome.com/a430ebc583.js" crossorigin="anonymous"></script>
+
+    <!--Bootstrap css-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!--Partie header-->
+    <header class="header">
+        <nav class="justify-content-around navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="../index.html">
+                <img class="col-md-3 offset-md-3" src="../images/logo2.png" alt="logo Orinoco">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="navbarContent" class="col-md-3 offset-md-3 collapse navbar-collapse">
+                <ul class="navbar-nav">
+                    <li class="navbar-item active">
+                        <a class="nav-link" href="../index.html">Accueil</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="panier.html">
+                            <i class="fas fa-shopping-basket"></i>
+                            Panier
+                        </a>
+                    </li>
+                </ul>
+             </div>
+        </nav>
+    </header>
+    <!--Partie contenu-->
+    <main class="main pt-5 pb-1">
+        <div class="container">
+            <section class="row">
+                <h1 class="col-12 text-white text-center pb-5"><u>Liste des produits sélectionnés</u></h1>
+                <article class="col-8">
+                    <div class="card mb-5">
+                        <img class="card-img" src="../images/teddy_4.jpg" alt="Peluche 4">
+                        <div class="card-body text-center">
+                            <h2 class="card-title">Nom du produit</h2>
+                            <p class="card-text">prix</p>
+                            <a href="html/produit.html">
+                                <button class="btn btn-lg">Voir le produit</button>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                <article class="col-8">
+                    <div class="card mb-5">
+                        <img class="card-img" src="../images/teddy_5.jpg" alt="Peluche 5">
+                        <div class="card-body text-center">
+                            <h2 class="card-title">Nom du produit</h2>
+                            <p class="card-text">prix</p>
+                            <a href="html/produit.html">
+                                <button class="btn btn-lg">Voir le produit</button>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                <p class="col-12 text-white prix mb-5">prix total de la commande:</p>
+            </section>
+            <section class="row border border-white personnaliser mb-5">
+                <h2 class="col-12 text-dark text-center mt-4 mb-5"><u>Formulaire de commande</u></h2>
+                <form class="col-10">
+                    <div class="form-group">
+                        <label class="label" for="nom">Nom:</label>
+                        <input type="text" class="form-control">
+                        <label class="label" for="prénom">Prénom:</label>
+                        <input type="text" class="form-control">
+                        <label class="label" for="Email">Email:</label>
+                        <input type="email" class="form-control">
+                        <label class="label" for="adresse">Adresse de livraison:</label>
+                        <input type="text" class="form-control">
+                        <label class="label" for="ville">Ville:</label>
+                        <input type="text" class="form-control">
+                        <input class="btn btn-lg mt-4" type="submit" value="Passer la commande">
+                    </div>
+                </form>
+            </section>
+        </div>
+    </main>
+    <!--Partie footer-->
+    <footer class="footer pt-4 pb-4">
+        <a class="text-white" href="#">Contact</a>
+        <a class="text-white" href="#">Mentions légales</a>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
