@@ -13,11 +13,9 @@ fetch('http://localhost:3000/api/teddies')
         <img class="card-img" src="${produits[i].imageUrl}" alt="Ourson">
         <h2 class="card-title text-center">${produits[i].name}</h2>
         <p class="card-text text-center">${produits[i].price/100} €</p>
-        <a href="produit.html"><button class="btn btn-lg">Voir le produit</button></a>
+        <a class="btn__centre" href="produit.html?id=${produits[i]._id}"><button class="btn btn-lg">Voir le produit</button></a>
         </div>
-        </article>` 
-;
+        </article>`;
     }
-
 });
 

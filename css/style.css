@@ -4,6 +4,10 @@
 
 .footer {
   background-color: #8D8383;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 6%;
+  font-size: 25px;
 }
 
 .main {
@@ -17,6 +21,9 @@
 .btn {
   background-color: #955CF2;
   color: #FFF;
+}
+.btn__centre {
+  text-align: center;
 }
 
 .personnaliser {

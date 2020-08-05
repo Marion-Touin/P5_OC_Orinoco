@@ -1,3 +1,7 @@
 .footer{
     background-color: $color-header;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 6%;
+    font-size: 25px;
 }

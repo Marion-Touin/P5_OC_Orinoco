@@ -7,4 +7,7 @@
 .btn{
     background-color: $color-button;
     color: $color-textbutton;
+    &__centre{
+        text-align: center;
+    }
 }
