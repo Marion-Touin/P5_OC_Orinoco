@@ -1,21 +1,38 @@
-// Récupération des produits sur l'API
+// Initialiser le container
+let container = document.getElementById("teddies_container");
+
+// Récupération de l'api
 fetch('http://localhost:3000/api/teddies')
 .then(response => response.json())
-.then(produits => {
-    //création d'une constante
-    const mesOursons = document.querySelector('#mesOursons');
-    //boucle pour récupérer les produits
-    for(let i = 0; i < produits.length; i++){
-        //insertion js dans html
-        mesOursons.innerHTML += `
-        <article class="col-md-10 col-lg-6">
-        <div class="card mb-5">
-        <img class="card-img" src="${produits[i].imageUrl}" alt="Ourson">
-        <h2 class="card-title text-center">${produits[i].name}</h2>
-        <p class="card-text text-center">${produits[i].price/100} €</p>
-        <a class="btn__centre" href="produit.html?id=${produits[i]._id}"><button class="btn btn-lg">Voir le produit</button></a>
-        </div>
-        </article>`;
-    }
-});
+.then(teddies => {
+    // Récupération des oursons
+    for(let i = 0; i < teddies.length; i++){
+        // Création de la div 
+        let divcontainer = document.createElement("div");
+        container.appendChild(divcontainer);
 
+        //Ajout de l'image
+        let imgTeddy = document.createElement("img");
+        imgTeddy.classList.add("card-img");
+        imgTeddy.setAttribute('src', teddies[i].imageUrl);
+        divcontainer.appendChild(imgTeddy);
+
+        // Ajout du h2
+        let h2Teddy = document.createElement("h2");
+        h2Teddy.classList.add("card-title");
+        h2Teddy.innerHTML = teddies[i].name;
+        divcontainer.appendChild(h2Teddy);
+
+        // Ajout du prix
+        let pTeddy = document.createElement("p");
+        pTeddy.innerHTML = "prix" + " " + teddies[i].price/100 + "€";
+        divcontainer.appendChild(pTeddy); 
+
+        //création du lien vers le produit
+        let linkTeddy = document.createElement("a");
+        linkTeddy.classList.add("btn");
+        linkTeddy.href = "produit.html?id_ourson="+teddies[i]._id;
+        linkTeddy.innerHTML = " voir le produit";
+        divcontainer.appendChild(linkTeddy);
+    }
+}).catch(error => console.log(error))

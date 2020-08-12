@@ -18,6 +18,10 @@
   height: 350px;
 }
 
+.card-title {
+  text-align: center;
+}
+
 .btn {
   background-color: #955CF2;
   color: #FFF;
