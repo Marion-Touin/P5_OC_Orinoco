@@ -31,14 +31,3 @@ fetch('http://localhost:3000/api/teddies')
         divcontainer.appendChild(linkTeddy);
     }
 }).catch(error => console.log(error))
-
-<section class="row border border-link mt-5 mb-5 personnaliser">
-<h2 class="col-lg-12 text-dark text-center pt-3 pb-4"><u>Personnaliser le produit</u></h2>
-<select class="col-7 col-md-6 col-lg-5 btn btn-lg mr-5 mb-5 mt-3">
-    <option>Option 1</option>
-    <option>Option 2</option>
-    <option>Option 3</option>
-    <option>Option 4</option>
-</select>
-<button class="col-7 col-md-6 col-lg-5 btn btn-lg mb-5 mt-3">Ajouter au panier</button>
-</section>
