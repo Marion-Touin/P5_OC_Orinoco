@@ -2,6 +2,10 @@
 let container = document.getElementById("teddie_container");
 let option = document.getElementById("option");
 let container2 = document.getElementById("teddie_container2");
+let res = document.getElementById('result');
+result = parseInt(res.value,10);    
+let plus = document.getElementById('plus');
+let moins = document.getElementById('moins');
 
 //recuperer id
 let params = new URLSearchParams (document.location.href.split('?')[1]);
@@ -48,6 +52,20 @@ fetch('http://localhost:3000/api/teddies/'+ url)
         colorsOption.textContent = ourson.colors[i];
     }
 
+    // ajout des quantités
+    plus.addEventListener('click', function() {
+        if(result >= 0 && result < 99){
+        result++;
+        document.getElementById('result').value= result;
+        }
+    });
+    moins.addEventListener('click', function() {
+        if(result > 0 && result <= 99){
+        result--;
+        document.getElementById('result').value= result;
+        }
+    });
+
     //ajout du bouton pour ajouter l'ourson au panier
     let divcontainer2 = document.createElement("btn");
     teddie_container2.appendChild(divcontainer2);
@@ -55,9 +73,21 @@ fetch('http://localhost:3000/api/teddies/'+ url)
     //création du lien vers le produit
     let linkPanier = document.createElement("a");
     linkPanier.classList.add("btn");
-    linkPanier.href = "panier.html";
     linkPanier.innerHTML = " Ajouter au panier";
     divcontainer2.appendChild(linkPanier);
+
+    linkPanier.onclick =
+    function(){
+        let oursonPanier = {
+            name:ourson.name,
+            id: ourson._id,
+            description: ourson.description,
+            colors: ourson.colors,
+            price: ourson.price,
+            imageURL: ourson.imageURL
+        }
+        localStorage.setItem("panier", oursonPanier);
+    }
 
 }).catch(error => console.log(error))
 
