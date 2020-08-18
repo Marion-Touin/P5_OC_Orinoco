@@ -53,3 +53,32 @@ btnValid.onclick = function () {
     }
     localStorage.setItem('panier', teddiesPanier);
 }
+
+// page produit
+linkPanier.onclick =
+function produit(){
+    localStorage.name = ourson.name
+}
+
+//page panier
+let containerPanier = document.getElementById("teddies_panier");
+
+window.onload = () => {
+    if(localStorage.name != null) {
+         var name = localStorage.name
+     }else{
+         var name = prompt("Entrez votre prénom")
+     }
+    // Création de la div 
+    let divcontainerpanier = document.createElement("div");
+    containerPanier.appendChild(divcontainerpanier);
+
+    // Ajout du h2
+    let h2Teddy = document.createElement("h2");
+    h2Teddy.innerHTML = name;
+    divcontainerpanier.appendChild(h2Teddy);
+
+
+       
+     console.log(name)
+ }

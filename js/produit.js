@@ -54,13 +54,13 @@ fetch('http://localhost:3000/api/teddies/'+ url)
 
     // ajout des quantités
     plus.addEventListener('click', function() {
-        if(result >= 0 && result < 99){
+        if(result >= 1 && result < 99){
         result++;
         document.getElementById('result').value= result;
         }
     });
     moins.addEventListener('click', function() {
-        if(result > 0 && result <= 99){
+        if(result > 1 && result <= 99){
         result--;
         document.getElementById('result').value= result;
         }
@@ -70,24 +70,26 @@ fetch('http://localhost:3000/api/teddies/'+ url)
     let divcontainer2 = document.createElement("btn");
     teddie_container2.appendChild(divcontainer2);
 
-    //création du lien vers le produit
+
     let linkPanier = document.createElement("a");
     linkPanier.classList.add("btn");
     linkPanier.innerHTML = " Ajouter au panier";
     divcontainer2.appendChild(linkPanier);
 
-    linkPanier.onclick =
-    function(){
-        let oursonPanier = {
-            name:ourson.name,
-            id: ourson._id,
-            description: ourson.description,
-            colors: ourson.colors,
-            price: ourson.price,
-            imageURL: ourson.imageURL
-        }
-        localStorage.setItem("panier", oursonPanier);
-    }
+//création d'un objet
 
+
+// page produit
+linkPanier.onclick =
+function (){
+    let teddiePanier = {
+        name : ourson.name,
+        price : ourson.price,
+        description : ourson.description,
+        imageUrl : ourson.imageUrl
+    }
+    let oursonPanier = JSON.stringify(teddiePanier);
+    localStorage.setItem("panier", oursonPanier);
+}
 }).catch(error => console.log(error))
 
