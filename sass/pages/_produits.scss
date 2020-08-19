@@ -1,4 +1,56 @@
 .personnaliser{
+    font-size: 2em;
+    margin: 2% 0;
+}
+.personnaliser2{
+    font-size: 2em;
+}
+.choix{
+    font-size: 1.5em;
+    border: 3px solid $color-button;
+    padding: 0 6%;
+    margin: 2% 2%;
+}
+.divperso{
+    display: flex;
+    justify-content: center;
+}
+.qty{
+    border: 3px solid $color-button;
+    font-size: 1.5em;
+    text-align: center;
+}
+.btnqty{
+    background-color: $color-button;
+    color: $color-textbutton;
+    font-size: 2em;
+    margin: 0 2%;
+}
+.card-img2{
+    height: 350px;
+    width: auto;
+    display: flex;
+    margin: 3% auto;
+}
+.card-title2{
+    font-size: 3.5em;
+    text-align: center;
+}
+.card-description{
+    font-size: 1.5em;
+    text-align: justify;
+    margin: 0 19%;
+    padding-bottom: 3%;
+}
+.card-prix{
+    font-size: 2em;
+    text-align: center;
+}
+.bordure2{
+    border: 3px solid $color-textbutton;
+    margin-bottom: 5%;
     background-color: $color-textbutton;
-    border-radius: 25px;
+}
+a:not([href]):not([tabindex]) {
+    color: $color-textbutton;
 }

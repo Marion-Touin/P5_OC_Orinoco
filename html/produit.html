@@ -40,15 +40,17 @@
     <main class="main pt-5 pb-1">
         <div class="container">
             <h1 class="col-lg-12 text-white text-center pb-5"><u>Détails du produit</u></h1>
-            <section class="row" id="teddie_container">
-            </section>
-            <section id="teddie_container2">
-                <label for="option">Personnalisé votre ourson :</label>
-                <select id="option" value="choix de la couleur"></select>
-                <form>
-                    <input id="moins" type="button" value="-" />
-                    <input id ="result" type="texte" value="1" />
-                    <input id="plus" type="button" value="+" />
+            <section class="row" id="teddie_container"></section>
+            <section class="bordure2" id="teddie_container2">
+                <div class="divperso">
+                    <label class="personnaliser" for="option">Personnalisé votre ourson :</label>
+                    <select id="option" value="choix de la couleur"></select>
+                </div>
+                <form class="divperso">
+                    <label class="personnaliser2">Sélectionné votre quantité :</label>
+                    <input class=" btnqty" id="moins" type="button" value="-" />
+                    <input class="qty" id ="result" type="texte" value="1" />
+                    <input class="btnqty" id="plus" type="button" value="+" />
                 </form>
             </section>
         </div>

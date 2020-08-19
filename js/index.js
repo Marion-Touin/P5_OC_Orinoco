@@ -9,6 +9,7 @@ fetch('http://localhost:3000/api/teddies')
     for(let i = 0; i < teddies.length; i++){
         // Création de la div 
         let divcontainer = document.createElement("div");
+        divcontainer.classList.add("bordure");
         container.appendChild(divcontainer);
 
         //Ajout de l'image
@@ -26,8 +27,9 @@ fetch('http://localhost:3000/api/teddies')
         //création du lien vers le produit
         let linkTeddy = document.createElement("a");
         linkTeddy.classList.add("btn");
+        linkTeddy.classList.add("btn__centre");
         linkTeddy.href = "html/produit.html?id_ourson="+teddies[i]._id;
-        linkTeddy.innerHTML = " voir le produit";
+        linkTeddy.innerHTML = " Détails du produit";
         divcontainer.appendChild(linkTeddy);
     }
 }).catch(error => console.log(error))

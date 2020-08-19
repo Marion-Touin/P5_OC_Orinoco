@@ -3,14 +3,24 @@
 }
 .card-img{
     height: 350px;
+    margin-bottom: 4%;
 }
 .card-title{
     text-align: center;
+    font-size: 2.5em;
 }
 .btn{
     background-color: $color-button;
     color: $color-textbutton;
     &__centre{
-        text-align: center;
+        display: flex;
+        place-content: space-around;
+        margin: 4% 27%;
+        font-size: 25px;
     }
+}
+.bordure{
+    border: 3px solid $color-textbutton;
+    margin: 5% 0;
+    background-color: $color-textbutton;
 }

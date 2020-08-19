@@ -15,31 +15,33 @@ fetch('http://localhost:3000/api/teddies/'+ url)
 .then(ourson => {
     // Création de la div 
     let divcontainer = document.createElement("div");
+    divcontainer.classList.add("bordure2");
     container.appendChild(divcontainer);
         
     //Ajout de l'image
     let imgTeddy = document.createElement("img");
-    imgTeddy.classList.add("card-img");
+    imgTeddy.classList.add("card-img2");
     imgTeddy.setAttribute('src', ourson.imageUrl);
     divcontainer.appendChild(imgTeddy);
             
     // Ajout du h2
     let h2Teddy = document.createElement("h2");
-    h2Teddy.classList.add("card-title");
+    h2Teddy.classList.add("card-title2");
     h2Teddy.innerHTML = ourson.name;
     divcontainer.appendChild(h2Teddy);
 
+    // Ajout du prix
+    let pTeddy = document.createElement("p");
+    pTeddy.classList.add("card-prix");
+    pTeddy.innerHTML = "Prix : " + " " + ourson.price/100 + "€";
+    divcontainer.appendChild(pTeddy);
+
     // Ajout de la description
     let descriptionTeddy = document.createElement("p");
-    descriptionTeddy.classList.add("card-title");
+    descriptionTeddy.classList.add("card-description");
     descriptionTeddy.innerHTML = ourson.description;
     divcontainer.appendChild(descriptionTeddy);
 
-    // Ajout du prix
-    let pTeddy = document.createElement("p");
-    pTeddy.innerHTML = "prix" + " " + ourson.price/100 + "€";
-    divcontainer.appendChild(pTeddy);
-    
     //Ajout de l'élément option
     let divcontainers = document.createElement("option");
     option.appendChild(divcontainers);
@@ -47,6 +49,7 @@ fetch('http://localhost:3000/api/teddies/'+ url)
     //boucle pour récupérer les couleurs individuellement
     for(let i = 0; i < ourson.colors.length; i++){
         let colorsOption = document.createElement('option');
+        option.classList.add("choix");
         option.appendChild(colorsOption);
         colorsOption.setAttribute('value', ourson.colors[i]);
         colorsOption.textContent = ourson.colors[i];
@@ -73,6 +76,7 @@ fetch('http://localhost:3000/api/teddies/'+ url)
 
     let linkPanier = document.createElement("a");
     linkPanier.classList.add("btn");
+    linkPanier.classList.add("btn__centre");
     linkPanier.innerHTML = " Ajouter au panier";
     divcontainer2.appendChild(linkPanier);
 
