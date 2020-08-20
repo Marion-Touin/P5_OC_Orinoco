@@ -10,6 +10,7 @@ fetch('http://localhost:3000/api/teddies')
         // Création de la div 
         let divcontainer = document.createElement("div");
         divcontainer.classList.add("bordure");
+        divcontainer.classList.add("col-lg-5");
         container.appendChild(divcontainer);
 
         //Ajout de l'image

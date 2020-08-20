@@ -31,13 +31,13 @@
 .btn__centre {
   display: flex;
   place-content: space-around;
-  margin: 4% 27%;
+  margin: 4% 20%;
   font-size: 25px;
 }
 
 .bordure {
   border: 3px solid #FFF;
-  margin: 5% 0;
+  margin: 3% 4%;
   background-color: #FFF;
 }
 

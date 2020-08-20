@@ -43,11 +43,14 @@ fetch('http://localhost:3000/api/teddies/'+ url)
     divcontainer.appendChild(descriptionTeddy);
 
     //Ajout de l'élément option
-    let divcontainers = document.createElement("option");
-    option.appendChild(divcontainers);
+    let firstoption = document.createElement("option");
+    firstoption.setAttribute('disabled', "disabled");
+    firstoption.setAttribute('selected', "true");
+    firstoption.textContent = "Sélectionner une couleur";
+    option.appendChild(firstoption);
         
     //boucle pour récupérer les couleurs individuellement
-    for(let i = 0; i < ourson.colors.length; i++){
+    for(let i = 0; i<ourson.colors.length; i++){
         let colorsOption = document.createElement('option');
         option.classList.add("choix");
         option.appendChild(colorsOption);
@@ -73,27 +76,24 @@ fetch('http://localhost:3000/api/teddies/'+ url)
     let divcontainer2 = document.createElement("btn");
     teddie_container2.appendChild(divcontainer2);
 
-
     let linkPanier = document.createElement("a");
     linkPanier.classList.add("btn");
     linkPanier.classList.add("btn__centre");
-    linkPanier.innerHTML = " Ajouter au panier";
+    linkPanier.innerHTML = "Ajouter au panier";
     divcontainer2.appendChild(linkPanier);
 
-//création d'un objet
-
-
-// page produit
-linkPanier.onclick =
-function (){
-    let teddiePanier = {
-        name : ourson.name,
-        price : ourson.price,
-        description : ourson.description,
-        imageUrl : ourson.imageUrl
-    }
-    let oursonPanier = JSON.stringify(teddiePanier);
-    localStorage.setItem("panier", oursonPanier);
-}
+    // page produit
+    linkPanier.onclick =
+        function (){
+        let teddiePanier = {
+            name : ourson.name,
+            price : ourson.price,
+            description : ourson.description,
+            imageUrl : ourson.imageUrl,
+            qty : result
+        }
+        let oursonPanier = JSON.stringify(teddiePanier);
+        localStorage.setItem(ourson._id, oursonPanier);
+        }
 }).catch(error => console.log(error))
 
