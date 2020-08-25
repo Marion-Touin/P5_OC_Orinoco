@@ -54,3 +54,34 @@
 a:not([href]):not([tabindex]) {
     color: $color-textbutton;
 }
+@media all and (max-width : 767px) {
+    .divperso{
+        display: flex;
+        flex-direction: column;
+    }
+    .card-img2{
+        height: 200px;
+    }
+    .personnaliser{
+        font-size: 1.45em;
+    }
+    .personnaliser2{
+        font-size: 1.45em;
+    }
+    .choix{
+        border: 3px solid $color-button;
+        font-size: 1.2em;
+    }
+    .qty{
+        border: 3px solid $color-button;
+        font-size: 1em;
+        text-align: center;
+    }
+    .btnqty{
+        background-color: $color-button;
+        color: $color-textbutton;
+        font-size: 0.85em;
+        margin: 0 2%;
+    }
+
+}

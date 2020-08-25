@@ -1,3 +1,14 @@
 .header{
     background-color: $color-header;
 }
+@media all and (max-width: 1024px){
+    .menu{
+        font-size: 35px;
+        text-align: center;
+    }
+}
+@media all and (max-width: 767px){
+    .menu{
+        font-size: 25px;
+    }
+}
