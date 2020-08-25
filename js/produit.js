@@ -94,6 +94,7 @@ fetch('http://localhost:3000/api/teddies/'+ url)
         }
         let oursonPanier = JSON.stringify(teddiePanier);
         localStorage.setItem(ourson._id, oursonPanier);
+        alert(message = 'vos articles ont bien été ajouté au panier');
         }
 }).catch(error => console.log(error))
 

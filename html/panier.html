@@ -43,23 +43,25 @@
             <section class="row">
                 <h1 class="col-lg-12 text-white text-center pb-5"><u>Liste des produits sélectionnés</u></h1>
                 <article class="row" id="teddies_panier"></article>
-                <p class="col-lg-12 text-white prix mb-5">prix total de la commande:</p>
+            </section>
+            <section class="row" id="panierTotal">
+                <p class="col-lg-12 text-white prix mb-5"></p>
             </section>
             <section class="row border border-white personnaliser mb-5">
                 <h3 class="col-lg-12 text-dark text-center mt-4 mb-5"><u>Formulaire de commande</u></h3>
-                <form class="col-lg-10">
+                <form class="col-lg-10" id="validationCommande">
                     <div class="form-group">
                         <label class="label" for="nom">Nom:</label>
-                        <input type="text" class="form-control">
-                        <label class="label" for="prénom">Prénom:</label>
-                        <input type="text" class="form-control">
-                        <label class="label" for="Email">Email:</label>
-                        <input type="email" class="form-control">
+                        <input type="text" class="form-control" id="firstName" required>
+                        <label class="label" for="prenom">Prénom:</label>
+                        <input type="text" class="form-control" id="lastName" required>
                         <label class="label" for="adresse">Adresse de livraison:</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" id="address" required>
                         <label class="label" for="ville">Ville:</label>
-                        <input type="text" class="form-control">
-                        <input class="btn btn-lg mt-4" type="submit" value="Passer la commande">
+                        <input type="text" class="form-control" id="city" required>
+                        <label class="label" for="Email">Email:</label>
+                        <input type="email" class="form-control" id="email" required>
+                        <button class="btn btn-lg mt-4 order-submit" type="submit">Passer la commande</button>
                     </div>
                 </form>
             </section>
@@ -75,7 +77,5 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <!--JS--> 
         <script src="../js/panier.js"></script>
-
-
 </body>
 </html>
