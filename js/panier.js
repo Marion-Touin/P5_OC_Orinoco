@@ -3,6 +3,7 @@ let containerPanier = document.getElementById("teddies_panier");
 let prixPanier = document.getElementById("panierTotal");
 
 // récupération du localStorage
+let productsId = [];
 let totalPanier = 0;
 let oursonPanier = Object.keys(localStorage);
 for (i=0; i < oursonPanier.length; i++) {
@@ -47,60 +48,73 @@ for (i=0; i < oursonPanier.length; i++) {
 
     //Prix total
     let total = totalPanier + (ourson.price/100 * ourson.qty);
-    console.log(total)
 
     let prixTotal = document.createElement("p");
     prixTotal.innerHTML = "Prix total de la commande" + " " + total + "€";
     prixPanier.appendChild(prixTotal);
+
+    //création du tableau products
+    productsId.push(ourson.id);
+    localStorage.setItem('products', JSON.stringify(productsId));
+    console.log (productsId)
 }
-    //gestion du formulaire
-
-    //Création de l'objet client
-    class client {
-        constructor(firstName, lastName, address, city, email) {
-            (this.firstName = firstName),
-            (this.lastName = lastName),
-            (this.address = address),
-            (this.city = city),
-            (this.email = email)     
-        }
+//Création de la classe client
+class Client {
+    constructor(firstName, lastName, address, city, email) {
+    (this.firstName = firstName),
+    (this.lastName = lastName),
+    (this.address = address),
+    (this.city = city),
+    (this.email = email)     
     }
+}
 
-    // initialisation du tableau products
-    let productsId = [];
-    for (i=0; i < oursonPanier.length; i++) {
-        productsId.push(oursonPanier[i]._id);
-    }
-    localStorage.setItem("products", JSON.stringify(productsId));
-    productsId = localStorage.getItem("products");
-    prorductsId = JSON.parse(productsId);
+//Création de l'objet client
+let form = document.querySelector('#validationCommande');
+form.addEventListener('submit', (e) => {
+    event.preventDefault();
+    let newClient = new Client (
+        document.querySelector('#firstName').value,
+        document.querySelector('#lastName').value,
+        document.querySelector('#address').value,
+        document.querySelector('#city').value,
+        document.querySelector('#email').value,
+    );
+    console .log(newClient);
+    localStorage.setItem('contact', JSON.stringify(newClient));
+})
+function send(){
+    let newClient = localStorage.getItem('contact');
+    newClient = JSON.parse(newClient);
+    let productsId = localStorage.getItem('products')
+    products = JSON.parse(productsId);
 
-    //Au click sur valider la commande
-    let boutonValider = document.querySelector(".order-submit");
-    boutonValider.addEventListener("click", function(event){
-        event.preventDefault();
-        //création nouveau client
-        let newClient = new client (
-            firstName.value,
-            lastName.value,
-            address.value,
-            city.value,
-            email.value
-        );
-        //fetch avec méthode post
-        fetch("http://localhost:3000/api/teddies/order", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                contact : {
-                    firstName: newClient.firstName,
-                    lastName: newClient.lastName,
-                    address: newClient.address,
-                    city: newClient.city,
-                    email: newClient.email,
-                },
-                products :productsId,
-            }),
-        })
-        console.log(products)
+    fetch('http://localhost:3000/api/teddies/order', {
+        method: 'POST',
+        headers : {
+            'Content-type' : 'application/json'
+        },
+        body : JSON.stringify ({
+            firstName : newClient.firstName,
+            lastName : newClient.lastName,
+            address : newClient.address,
+            city : newClient.city,
+            email : newClient.email
+        }),
+        products : productsId,
     })
+        .then(function(response) {
+        if(response.ok) {
+            document.querySelector('validationCommande').classList.remove('disabled');
+            alert('vos informations ont bien été enregistré, vous pouvez validez votre commande!');
+            response.json()
+            .then((products) => {
+                localStorage.setItem('orderInfos', JSON.stringify(products)); 
+            })
+        }
+    })
+}  
+
+
+
+

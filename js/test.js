@@ -82,3 +82,55 @@ window.onload = () => {
        
      console.log(name)
  }
+
+ fetch("http://localhost:3000/api/teddies/order", {
+    method: 'POST',
+    headers : {
+        'Content-type' : 'application/json'
+    },
+    body : JSON.stringify () {
+        firstName : newClient.firstName,
+        lastName : newClient.lastName,
+        address : newClient.address,
+        city : newClient.city,
+        email : newClient.email
+    })
+})
+.then (res => {
+    return res.json()
+})
+.then(data => console.log(data))
+.catch(error => console.log('ERROR'))
+        //Au click sur valider la commande
+        let boutonValider = document.querySelector(".order-submit");
+        boutonValider.addEventListener("click", function(event){
+            event.preventDefault();
+            //création nouveau client
+            let newClient = new client (
+                firstName.value,
+                lastName.value,
+                address.value,
+                city.value,
+                email.value
+            );
+        })
+
+                // initialisation du tableau products
+
+                localStorage.setItem("products", JSON.stringify(productsId));
+                productsId = localStorage.getItem("products");
+                productsId = JSON.parse(productsId);
+
+                    //Création de l'objet client
+    class client {
+        constructor(firstName, lastName, address, city, email) {
+            (this.firstName = firstName),
+            (this.lastName = lastName),
+            (this.address = address),
+            (this.city = city),
+            (this.email = email)     
+        }
+    }
+
+
+    

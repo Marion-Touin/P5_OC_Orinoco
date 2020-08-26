@@ -86,6 +86,7 @@ fetch('http://localhost:3000/api/teddies/'+ url)
     linkPanier.onclick =
         function (){
         let teddiePanier = {
+            id : ourson._id,
             name : ourson.name,
             price : ourson.price,
             description : ourson.description,
