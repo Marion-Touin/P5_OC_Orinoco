@@ -1,17 +1,21 @@
-// Initialiser le container
+// Initialiser les containers
 let containerPanier = document.getElementById("teddies_panier");
 let prixPanier = document.getElementById("panierTotal");
 
-// récupération du localStorage
+// Création du tableau products
 let productsId = [];
+
+// création de la variable totalpanier
 let totalPanier = 0;
+
+// récupération du localStorage
 let oursonPanier = Object.keys(localStorage);
 for (i=0; i < oursonPanier.length; i++) {
     let ourson = JSON.parse(localStorage.getItem(oursonPanier[i]))
 
     // Création de la div 
     let divcontainerpanier = document.createElement("div");
-    divcontainerpanier.classList.add("bordure");
+    divcontainerpanier.classList.add("bordure")
     divcontainerpanier.classList.add("col-lg-5");
     containerPanier.appendChild(divcontainerpanier);
 
@@ -46,18 +50,18 @@ for (i=0; i < oursonPanier.length; i++) {
     btnSupprimer.innerHTML = "Supprimer le produit";
     divcontainerpanier.appendChild(btnSupprimer);
 
-    //Prix total
-    let total = totalPanier + (ourson.price/100 * ourson.qty);
+    // Calcul du prix total
+    totalPanier = totalPanier + (ourson.price/100 * ourson.qty);
 
-    let prixTotal = document.createElement("p");
-    prixTotal.innerHTML = "Prix total de la commande" + " " + total + "€";
-    prixPanier.appendChild(prixTotal);
-
-    //création du tableau products
+    // Push Id de l'ourson dans le tableau products
     productsId.push(ourson.id);
-    localStorage.setItem('products', JSON.stringify(productsId));
-    console.log (productsId)
 }
+
+// Affichage du prix total
+let prixTotal = document.createElement("p");
+prixTotal.innerHTML = "Prix total de la commande" + " " + totalPanier + "€";
+prixPanier.appendChild(prixTotal);
+
 //Création de la classe client
 class Client {
     constructor(firstName, lastName, address, city, email) {
@@ -72,6 +76,25 @@ class Client {
 //Création de l'objet client
 let form = document.querySelector('#validationCommande');
 form.addEventListener('submit', (e) => {
+
+    // check champs du formulaire
+    if (!document.querySelector('#firstName').value.match(/^([a-zA-Zàâäéèêëïîôöùûüç' ]+)$/)){
+        alert('Le champs nom contient des erreurs')
+    } 
+    if (!document.querySelector('#lastName').value.match(/^([a-zA-Zàâäéèêëïîôöùûüç' ]+)$/)){
+        alert('Le champs prénom contient des erreurs')
+    }
+    if(!document.querySelector('#address').value.match(/^([0-9]{1,3}(([,. ]?){1}[a-zA-Zàâäéèêëïîôöùûüç' ]+))$/)){
+        alert('Le champs adresse contient des erreurs')
+    }
+    if (!document.querySelector('#city').value.match(/^([a-zA-Zàâäéèêëïîôöùûüç' ]+)$/)){
+        alert('Le champs ville contient des erreurs')
+    }
+    if (!document.querySelector('#email').value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)){
+        alert('Le cahmps email contient des erreurs')
+    }
+
+    //création du nouveau client
     event.preventDefault();
     let newClient = new Client (
         document.querySelector('#firstName').value,
@@ -80,40 +103,38 @@ form.addEventListener('submit', (e) => {
         document.querySelector('#city').value,
         document.querySelector('#email').value,
     );
-    console .log(newClient);
-    localStorage.setItem('contact', JSON.stringify(newClient));
-})
-function send(){
-    let newClient = localStorage.getItem('contact');
-    newClient = JSON.parse(newClient);
-    let productsId = localStorage.getItem('products')
-    products = JSON.parse(productsId);
+    console.log(productsId);
 
-    fetch('http://localhost:3000/api/teddies/order', {
-        method: 'POST',
-        headers : {
-            'Content-type' : 'application/json'
-        },
-        body : JSON.stringify ({
+    // Création de l'objet résultat
+    let resultat = {
+        contact : {
             firstName : newClient.firstName,
             lastName : newClient.lastName,
             address : newClient.address,
             city : newClient.city,
             email : newClient.email
-        }),
-        products : productsId,
+        },
+        products : productsId
+    }
+    
+    // Apelle de fetch avec order
+    fetch('http://localhost:3000/api/teddies/order', {
+        method: 'POST',
+        headers : {
+            'Content-type' : 'application/json'
+        },
+        body : JSON.stringify (resultat)
     })
-        .then(function(response) {
-        if(response.ok) {
-            document.querySelector('validationCommande').classList.remove('disabled');
-            alert('vos informations ont bien été enregistré, vous pouvez validez votre commande!');
-            response.json()
-            .then((products) => {
-                localStorage.setItem('orderInfos', JSON.stringify(products)); 
-            })
-        }
-    })
-}  
+        //réponse du serveur
+        .then(response => response.json())
+        .then(response => {
+            console.log(response)
+            /*vider le localstorage .clear
+            créer un localstorage pour stocker id commande et total commande
+            redirection vers la page confirmation html*/ 
+        });        
+})
+
 
 
 

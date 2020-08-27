@@ -46,6 +46,7 @@ fetch('http://localhost:3000/api/teddies/'+ url)
     let firstoption = document.createElement("option");
     firstoption.setAttribute('disabled', "disabled");
     firstoption.setAttribute('selected', "true");
+    firstoption.setAttribute('value', 0 );
     firstoption.textContent = "Sélectionner une couleur";
     option.appendChild(firstoption);
         
