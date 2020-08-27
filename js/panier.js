@@ -91,7 +91,7 @@ form.addEventListener('submit', (e) => {
         alert('Le champs ville contient des erreurs')
     }
     if (!document.querySelector('#email').value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)){
-        alert('Le cahmps email contient des erreurs')
+        alert('Le champs email contient des erreurs')
     }
 
     //création du nouveau client
@@ -129,10 +129,15 @@ form.addEventListener('submit', (e) => {
         .then(response => response.json())
         .then(response => {
             console.log(response)
-            /*vider le localstorage .clear
-            créer un localstorage pour stocker id commande et total commande
-            redirection vers la page confirmation html*/ 
-        });        
+            localStorage.clear();
+                let objCommande = {
+                    idCommande : response.orderId,
+                    prixTotal : totalPanier
+                }
+                let commande = JSON.stringify(objCommande);
+                localStorage.setItem('commande', commande);
+                window.location = 'confirmation.html';
+            });  
 })
 
 
