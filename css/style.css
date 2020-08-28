@@ -261,7 +261,7 @@ a:not([href]):not([tabindex]) {
 }
 
 .bouton {
-  margin: 2% auto;
+  margin: 2% auto 17%;
 }
 
 @media all and (max-width: 767px) {
