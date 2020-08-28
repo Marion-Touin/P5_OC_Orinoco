@@ -1,6 +1,32 @@
-.confirmation{
-    font-size: 25px;
+.message{
+    color: $color-textbutton;
+    margin: 2% 4%;
 }
-.padding{
-    padding-bottom: 18%;
+.recapitulatif{
+    color: $color-textbutton;
+    margin: 0 auto;
+    text-decoration:underline;
+    margin-bottom: 3%;
+    font-size: 35px;
+}
+.paragraphe{
+    color: $color-textbutton;
+    margin-left: 2%; 
+}
+.bouton{
+    margin: 2% auto;
+}
+@media all and (max-width: 767px) {
+    .message{
+        text-align: center;
+        margin: 2% 5% 15%;
+        font-size: 1.15em;
+    }
+    .recapitulatif{
+        text-align: center;
+        font-size: 1.15em;
+    }
+    .paragraphe{
+        font-size: 0.85em;
+    }
 }
