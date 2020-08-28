@@ -43,13 +43,6 @@ for (i=0; i < oursonPanier.length; i++) {
     qtyTeddy.innerHTML = "Quantité produits :" + " " + ourson.qty;
     divcontainerpanier.appendChild(qtyTeddy);
 
-    //Bouton supprimer produit
-    let btnSupprimer = document.createElement("a");
-    btnSupprimer.classList.add("btn");
-    btnSupprimer.classList.add("btn__centre");
-    btnSupprimer.innerHTML = "Supprimer le produit";
-    divcontainerpanier.appendChild(btnSupprimer);
-
     // Calcul du prix total
     totalPanier = totalPanier + (ourson.price/100 * ourson.qty);
 
@@ -59,6 +52,8 @@ for (i=0; i < oursonPanier.length; i++) {
 
 // Affichage du prix total
 let prixTotal = document.createElement("p");
+prixTotal.classList.add("col-lg-12");
+prixTotal.classList.add("prix");
 prixTotal.innerHTML = "Prix total de la commande" + " " + totalPanier + "€";
 prixPanier.appendChild(prixTotal);
 

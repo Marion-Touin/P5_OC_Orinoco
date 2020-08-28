@@ -176,13 +176,72 @@ a:not([href]):not([tabindex]) {
   }
 }
 .prix {
-  font-size: 35px;
+  font-size: 1.75em;
+  text-align: center;
 }
 
 .label {
-  font-size: 25px;
+  font-size: 2em;
+  text-align: center;
+  margin-top: 3%;
 }
 
+.label2 {
+  margin-bottom: 5%;
+}
+
+.formulaire {
+  font-size: 3.5em;
+}
+
+.cadre {
+  border: 3px solid #000;
+  padding: 5% 5% 3% 5%;
+  margin-bottom: 5%;
+}
+
+.titre {
+  font-size: 3.5em;
+}
+
+.cadre2 {
+  border: 3px solid #000;
+  padding: 2% 5% 3% 5%;
+  margin-bottom: 6%;
+}
+
+.btn-lg {
+  font-size: 2em;
+  display: flex;
+  place-content: space-around;
+}
+
+@media all and (max-width: 767px) {
+  .titre {
+    font-size: 1.75em;
+  }
+
+  .card-prix {
+    font-size: 1.5em;
+  }
+
+  .prix {
+    font-size: 1.25em;
+  }
+
+  .formulaire {
+    font-size: 2em;
+  }
+
+  .label {
+    font-size: 1.5em;
+  }
+
+  .btn {
+    margin: 4% 0;
+    font-size: 20px;
+  }
+}
 .confirmation {
   font-size: 25px;
 }
