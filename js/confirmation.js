@@ -1,10 +1,9 @@
 let containerConfirmation = document.getElementById("confirmation");
 
-
+//Récupération localstorage
 let commande =  Object.keys(localStorage);
 for (i=0; i < commande.length; i++) {
     let recapCommande = JSON.parse(localStorage.getItem(commande[i]))
-    console.log(recapCommande)
 
     //création de la div
     let divConfirmation = document.createElement("div");

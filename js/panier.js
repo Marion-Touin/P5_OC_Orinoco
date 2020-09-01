@@ -98,7 +98,6 @@ form.addEventListener('submit', (e) => {
         document.querySelector('#city').value,
         document.querySelector('#email').value,
     );
-    console.log(productsId);
 
     // Création de l'objet résultat
     let resultat = {
