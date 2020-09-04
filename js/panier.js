@@ -74,19 +74,24 @@ form.addEventListener('submit', (e) => {
 
     // check champs du formulaire
     if (!document.querySelector('#firstName').value.match(/^([a-zA-Zàâäéèêëïîôöùûüç' ]+)$/)){
-        alert('Le champs nom contient des erreurs')
+        alert('Le champs nom contient des erreurs');
+        window.location ='panier.html';
     } 
     if (!document.querySelector('#lastName').value.match(/^([a-zA-Zàâäéèêëïîôöùûüç' ]+)$/)){
-        alert('Le champs prénom contient des erreurs')
+        alert('Le champs prénom contient des erreurs');
+        window.location ='panier.html';
     }
     if(!document.querySelector('#address').value.match(/^([0-9]{1,3}(([,. ]?){1}[a-zA-Zàâäéèêëïîôöùûüç' ]+))$/)){
-        alert('Le champs adresse contient des erreurs')
+        alert('Le champs adresse contient des erreurs');
+        window.location ='panier.html';
     }
     if (!document.querySelector('#city').value.match(/^([a-zA-Zàâäéèêëïîôöùûüç' ]+)$/)){
-        alert('Le champs ville contient des erreurs')
+        alert('Le champs ville contient des erreurs');
+        window.location ='panier.html';
     }
     if (!document.querySelector('#email').value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)){
-        alert('Le champs email contient des erreurs')
+        alert('Le champs email contient des erreurs');
+        window.location ='panier.html';
     }
 
     //création du nouveau client
@@ -122,7 +127,6 @@ form.addEventListener('submit', (e) => {
         //réponse du serveur
         .then(response => response.json())
         .then(response => {
-            console.log(response)
             localStorage.clear();
                 let objCommande = {
                     idCommande : response.orderId,
