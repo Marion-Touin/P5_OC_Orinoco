@@ -7,6 +7,7 @@ result = parseInt(res.value,10);
 let plus = document.getElementById('plus');
 let moins = document.getElementById('moins');
 
+
 //recuperer id
 let params = new URLSearchParams (document.location.href.split('?')[1]);
 let url = params.get("id_ourson");
@@ -55,7 +56,7 @@ fetch('http://localhost:3000/api/teddies/'+ url)
         let colorsOption = document.createElement('option');
         option.classList.add("choix");
         option.appendChild(colorsOption);
-        colorsOption.setAttribute('value', ourson.colors[i]);
+        colorsOption.setAttribute('value', 1);
         colorsOption.textContent = ourson.colors[i];
     }
 
@@ -83,20 +84,26 @@ fetch('http://localhost:3000/api/teddies/'+ url)
     linkPanier.innerHTML = "Ajouter au panier";
     divcontainer2.appendChild(linkPanier);
 
-    // page produit
+    // Ecoute de l'évènement valider la commande
     linkPanier.onclick =
         function (){
-        let teddiePanier = {
-            id : ourson._id,
-            name : ourson.name,
-            price : ourson.price,
-            description : ourson.description,
-            imageUrl : ourson.imageUrl,
-            qty : result
-        }
-        let oursonPanier = JSON.stringify(teddiePanier);
-        localStorage.setItem(ourson._id, oursonPanier);
-        alert(message = 'vos articles ont bien été ajouté au panier');
-        }
+            let select=document.querySelector('select');
+            let choixCouleur = select.selectedIndex;
+            if( choixCouleur == 0 ){
+                alert('Vous devez personnalisé votre ourson !');
+            }else{
+                let teddiePanier = {
+                    id : ourson._id,
+                    name : ourson.name,
+                    price : ourson.price,
+                    description : ourson.description,
+                    imageUrl : ourson.imageUrl,
+                    qty : result
+                }
+                let oursonPanier = JSON.stringify(teddiePanier);
+                localStorage.setItem(ourson._id, oursonPanier);
+                alert(message = 'vos articles ont bien été ajouté au panier');
+                }
+            }    
 }).catch(error => console.log(error))
 
