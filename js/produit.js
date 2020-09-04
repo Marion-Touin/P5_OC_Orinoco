@@ -90,7 +90,7 @@ fetch('http://localhost:3000/api/teddies/'+ url)
             let select=document.querySelector('select');
             let choixCouleur = select.selectedIndex;
             if( choixCouleur == 0 ){
-                alert('Vous devez choisir une couleur');
+                alert('Vous devez personnalisé votre ourson !');
             }else{
                 let teddiePanier = {
                     id : ourson._id,
