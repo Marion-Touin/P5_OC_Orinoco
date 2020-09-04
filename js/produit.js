@@ -7,6 +7,7 @@ result = parseInt(res.value,10);
 let plus = document.getElementById('plus');
 let moins = document.getElementById('moins');
 
+
 //recuperer id
 let params = new URLSearchParams (document.location.href.split('?')[1]);
 let url = params.get("id_ourson");
