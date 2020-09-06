@@ -7,8 +7,7 @@ result = parseInt(res.value,10);
 let plus = document.getElementById('plus');
 let moins = document.getElementById('moins');
 
-
-//recuperer id
+//Récuperer id
 let params = new URLSearchParams (document.location.href.split('?')[1]);
 let url = params.get("id_ourson");
 fetch('http://localhost:3000/api/teddies/'+ url)

@@ -31,6 +31,9 @@
     display: flex;
     place-content: space-around;
 }
+.btn-valide{
+    margin: 0 auto;
+}
 @media all and (max-width: 767px) {
     .titre{
         font-size: 1.75em;
