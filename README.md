@@ -2,14 +2,19 @@
 
 This is the back end server for Project 5 of the Junior Web Developer path.
 
-### Prerequisites ###
+Scénario
+Bonjour et bienvenue chez Orinoco ! J’espère que tu te plairas parmi nous. J’ai vraiment hâte de montrer ce MVP aux investisseurs. Il faut qu’on les rassure car ils misent sur nous. :)
+Jeanne s’occupera du back-end et toi du front.
 
-You will need to have Node and `npm` installed locally on your machine.
+Avec l’équipe, on a déjà pas mal bossé sur le cahier du MVP. Cela te fera une bonne base pour avancer. Tu trouveras en pièce jointe les spécifications.
 
-### Installation ###
+N'hésite pas à venir me voir si tu as la moindre question, ma porte est toujours ouverte.
 
-Clone this repo. From within the project folder, run `npm install`. You 
-can then run the server with `node server`. 
-The server should run on `localhost` with default port `3000`. If the
-server runs on another port for any reason, this is printed to the
-console when the server starts, e.g. `Listening on port 3001`.
+Paul
+
+Fondateur de Orinoco
+
+comment faire fonctionner le projet :
+1- Installer node.js et npm localement
+2- Commande : npm install
+3- Commande : node server
